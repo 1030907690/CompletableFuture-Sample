@@ -22,4 +22,25 @@ public class TestController {
     public String completeNotify(){
         return completableFutureService.completeNotify();
     }
+
+    @RequestMapping("/asyncTask")
+    public String asyncTask(){
+        return completableFutureService.asyncTask();
+    }
+
+    @RequestMapping("/stream")
+    public String stream(){
+        return completableFutureService.stream();
+    }
+    @RequestMapping("/exception")
+    public String exception(){
+        return completableFutureService.exception();
+    }
+
+
+
+    @RequestMapping("/compose")
+    public String compose(){
+        return completableFutureService.compose();
+    }
 }
