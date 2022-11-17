@@ -1,7 +1,10 @@
 package com.zzq.sample.controller;
 
+import com.zzq.sample.service.CompletableFutureService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * @author Zhou Zhongqing
@@ -13,5 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class TestController {
 
-
+    @Resource
+    private CompletableFutureService completableFutureService;
+    @RequestMapping("/completeNotify")
+    public String completeNotify(){
+        return completableFutureService.completeNotify();
+    }
 }
